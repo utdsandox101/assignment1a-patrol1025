@@ -7,3 +7,12 @@
 # for reference on exceptions, check the class notes here: https://github.com/FTEC-6v99/python-overview/blob/master/advanced/exceptions.py
 #
 # Make sure that you add type hints to the function paramter and return value
+import typing as t
+
+
+def calculate_avg(grades: list[t.Union[int, float]]) -> float:
+    total: float = 0.0
+    for grade in grades:
+        total += grade
+
+    return round(total / len(grades), 2)
